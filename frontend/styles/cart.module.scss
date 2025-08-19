@@ -1,0 +1,132 @@
+@import "./variables";
+@import "./functions";
+
+.cart_page_container
+{
+    padding-top: 3rem;
+    @include flex(space-between, flex-start, row, wrap);
+    gap: 1.5rem;
+    
+    .cart_items_list_container
+    {
+        width: 100%;
+        max-width: 70rem;
+        @include flex(flex-start, flex-start, column, nowrap);
+        row-gap: 2rem;
+
+
+        .cart_product
+        {
+            @include flex(flex-start, flex-start, row, nowrap);
+            @include responsive("mobile")
+            {
+               flex-wrap: wrap;
+            }
+            gap: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: -0.2rem 1.7rem 6rem -4.6rem $color2;
+            border-radius: 1rem;
+                width: 100%;
+            .cart_product_preview
+            {
+                max-width: 10rem;
+                max-height: 10rem;
+                min-width: 10rem;
+                min-height: 10rem;
+                img
+                {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .cart_product_details
+            {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 7px;
+                h3
+                {
+                    font-size: $text_size;
+                    font-weight: 500;
+                }
+                p
+                {
+                    font-size: $s_heading;
+                    color: $color4;
+                }
+            }
+
+            .cart_item_dlt_btn
+            {
+                    margin: auto 0px;
+    margin-left: auto;
+                cursor: pointer;
+                svg 
+                {
+                    color: $color3;
+                    font-size: 4.5rem;
+
+                }
+            }
+            
+        }
+    }
+    .cart_summary_container
+    {
+     width: 100%;   
+     max-width: 30rem;
+     padding: 1.5rem;
+     border: 1px solid $color2;
+     position: sticky;
+     left: 0px;
+     top: 12rem;
+     @include responsive("mobile")
+     {
+     max-width: 100%;
+
+     }
+
+      @include flex(flex-start, center, column, nowrap); 
+        row-gap: 1.5rem;
+        h2 
+        {
+            font-weight: 600;
+                border-bottom: 1px solid $color2;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1rem;
+        }
+      div 
+      {
+        width: 100%;
+            @include flex(space-between, center, row, nowrap); 
+
+      }
+    }
+    .billing_details_container
+    {
+         width: 100%;
+        max-width: 70rem;
+         h2 
+        {
+            font-weight: 600;
+            width: 100%;
+        }
+        .billing_details_form
+        {
+            width: 100%;
+            @include flex(flex-start, flex-start, column, nowrap);
+            row-gap: 1.5rem;
+            input 
+            {
+                width: 100%;
+                max-width: 50rem;
+                padding: 1rem 1rem;
+                outline: none;
+            }
+        }
+    }
+
+}

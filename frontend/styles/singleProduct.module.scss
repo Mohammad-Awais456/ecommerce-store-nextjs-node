@@ -1,0 +1,172 @@
+@import "./variables";
+@import "./functions";
+
+.single_productPage_container
+{
+   
+ 
+    .product_image_and_price_container
+    {
+        width: 100%;
+        @include flex(flex-start,flex-start,row,nowrap);
+        column-gap: 4rem;
+        
+        .product_preview_container
+        {
+            @include flex(flex-start,center,column,nowrap);
+            width: 100%;
+            max-width: 40rem;
+            .active_preview_container
+            {
+                width: 100%;
+                height: 40rem;
+                border: 0.1rem solid #bdbdbd;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    max-width: 100%;
+                    object-fit: contain;
+                }
+            }
+            .product_all_previewes_list
+            {   margin-top: 2rem;
+                width: 100%;
+                    height: 10rem;
+                @include flex(flex-start,center,row,nowrap);
+                gap: 1rem;
+                overflow-x: auto;
+                .product_preview_item.active{
+
+                    img {
+
+                        opacity: 1;
+                    }
+                }
+                .product_preview_item
+                {
+                    width: 7rem;
+                    height: 7rem;
+                    min-width: 5rem;
+                    min-height: 5rem;
+                    
+                    border: 0.1rem solid rgba(0, 0, 0, 0.372);
+                    cursor: pointer;
+                    &:hover{
+                        img 
+                        {
+                        opacity: 1;
+
+                        }
+                    }
+                    img{
+                        transition: opacity 0.5s ease-in-out;
+                        opacity: 0.5;
+                        width: 100%;
+                        height: 100%;
+                        max-width: 100%;
+                          object-fit: cover;
+
+                    }
+                }
+            }
+        }
+        .product_details_container
+        {
+            max-width: 100%;
+            @include flex(flex-start,flex-start,column,nowrap);
+            gap: 1rem;
+            .h1{
+                font-weight: 600;
+            }
+            .product_price
+            {
+                font-size: 3rem;
+                font-weight: 500;
+            }
+            .add_to_cart_btn_container
+            {
+                 @include flex(flex-start,center,row,nowrap);
+                 gap: 2rem;
+               
+
+            }
+
+
+
+        }
+    }
+
+    .product_reviews_container
+    {
+        width: 100%;
+        max-width: 70rem;
+        h2
+        {
+            font-weight: 600
+        }
+        .product_reviews_list
+        {
+            @include flex(flex-start,center,column,nowrap);
+            row-gap: 3rem;
+            width: 100%;
+            .product_review_item
+            {
+                @include flex(flex-start,flex-start,column,nowrap);
+                gap: 0rem;
+                width: 100%;
+              .product_review_header
+              {
+                @include flex(space-between,center,row,nowrap);
+                width: 100%;
+                .product_review_user_info
+                {
+                    
+                    .user_name
+                    {
+                        font-weight: 600;
+                        margin-right: 1rem;
+                    }
+                }
+              }
+            }
+        }
+    }
+    .write_product_review_container
+    {
+        width: 100%;
+        .write_product_review_form
+        {
+            width: 100%;
+            max-width: 70rem;
+            .form_group{
+                column-gap: 1rem;
+                @include flex(flex-start,center,row,nowrap);
+            }
+            textarea{
+                width: 100%;
+                height: 10rem;
+                resize: none;
+                outline: none;
+                border: 0.1rem solid $color2;
+                padding: 1rem;
+                font-size: 1.6rem;  
+                font-weight: 300
+            }
+        }
+    }
+   @include responsive("tablet")
+   {
+    .product_image_and_price_container
+    {
+        @include flex(flex-start,center,column,nowrap);
+        gap: 2rem;
+
+        .product_details_container
+        {
+            margin-right: auto;
+        }
+    }
+
+   }
+
+}

@@ -1,0 +1,83 @@
+@import "./variables";
+@import "./functions";
+
+
+#hero_section_container{
+background: rgba(255, 255, 255, 0.527);
+min-height: 40rem;
+// @include flex(flex-start,flex-start,row,nowrap);
+padding-top: 6rem;
+position: relative;
+
+}
+
+.hero_section_inner_container{
+    @include flex(center,center,row,wrap);
+
+
+    .hero_section_content{
+        max-width: 100rem;
+        width: 100%;
+        margin-top: 5rem;
+        @include flex(flex-start,center,column,nowrap);
+        row-gap: 2rem;
+        p{
+            text-align: center;
+            width: 100%;
+            max-width: 70rem;
+        }
+        .heroSection_main_heading
+        {
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+
+
+
+}
+
+
+// ====================== Categories Section =====================
+.home_page_categories_container
+{
+    min-height: 26rem;
+    padding-top: 3rem;
+    @include flex(flex-start,center,column,nowrap);
+    
+  
+
+    @include responsive("tablet")
+    {
+    @include flex(center,flex-start,row,wrap);
+    row-gap: 3rem;
+      
+
+ 
+    }
+}
+
+.products_container
+{
+    margin-top: 5rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   justify-content: center;
+   @include responsive("custom-max-width",800px )
+   {
+        grid-template-columns: 1fr 1fr;
+      }
+   @include responsive("custom-max-width",600px )
+   {
+        grid-template-columns: 0.95fr;
+      }
+
+
+
+   column-gap: 2rem;
+   row-gap: 2rem;
+    .single_product{
+        width: 30rem;
+        height: 30rem;
+    }
+}

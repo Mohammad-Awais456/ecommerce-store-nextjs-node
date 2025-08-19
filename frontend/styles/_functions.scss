@@ -1,0 +1,147 @@
+@mixin flex($js,$al,$dr,$wr) {
+  display: flex;
+  justify-content: $js;
+  align-items: $al;
+  flex-direction: $dr;
+  flex-wrap: $wr;
+}
+// hover
+@mixin hover() 
+{
+cursor: pointer;
+transform: scale(1.1);
+transition: 0.5s;
+}
+//-------------------- Background ..................
+@mixin set_bg($c1,$c2,$url)
+{
+background: linear-gradient($c1,$c2),url($url);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+// responsive 
+@mixin responsive($break_point,$custom_break_point:"")
+{
+  @if $break_point=="min-small-mobile"
+  {
+      @media only screen and (min-width:350px)
+      {
+        @content;   
+      }
+          
+  }
+  @if $break_point=="min-mobile"
+  {
+      @media only screen and (min-width:600px)
+      {
+        @content;   
+      }
+          
+  }
+  @if $break_point=="min-tablet"
+  {
+      @media only screen and (min-width:900px)
+      {
+        @content;   
+      }
+          
+  }
+  @if $break_point=="min-laptop"
+  {
+      @media only screen and (min-width:1200px)
+      {
+        @content;   
+      }
+          
+  }
+  @if $break_point=="mobile"
+  {
+      @media only screen and (max-width:600px)
+      {
+        @content;   
+      }
+          
+  }
+  @if $break_point=="tablet"
+  {
+      @media only screen and (max-width:900px)
+      {
+        @content;   
+      }
+          
+  }
+  @if $break_point=="laptop"
+  {
+      @media only screen and (max-width:1200px)
+      {
+        @content;   
+      }
+          
+  }
+  @if $break_point=="desktop"
+  {
+      @media only screen and (min-width:1200px)
+      {
+        @content;   
+      }
+          
+  }
+  @if $break_point=="custom-min-width"
+  {
+      @media only screen and (min-width:$custom_break_point)
+      {
+        @content;   
+      }
+          
+  }
+  @if $break_point=="custom-max-width"
+  {
+      @media only screen and (max-width:$custom_break_point)
+      {
+        @content;   
+      }
+          
+  }
+  @if $break_point=="custom-min-height"
+  {
+      @media only screen and (min-height:$custom_break_point)
+      {
+        @content;   
+      }
+          
+  }
+  @if $break_point=="custom-max-height"
+  {
+      @media only screen and (max-height:$custom_break_point)
+      {
+        @content;   
+      }
+          
+  }
+      
+  
+  
+}
+
+
+// --------------------------------------
+@mixin up_down_animation($speed) {
+
+animation: up_down $speed linear 0s infinite alternate !important;
+
+
+@keyframes up_down {
+  from{
+      // opacity: 1;
+      transform:translate(-50%,-50%) scale(1);
+  }
+  to{
+      // opacity: 0.4;
+      transform: translate(-50%,-50%) scale(1.1);
+
+  }
+  
+}
+
+}
